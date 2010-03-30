@@ -1,0 +1,27 @@
+<% if @speed_dial %>
+	<section id="speeddial" class="listing">
+		<h2>Speed Dial</h2>
+		<ul>
+			<% @speed_dial.each do |mark| %>
+			<li>
+				<%=output_bookmark(mark)%>
+			</li>
+			<% end %>
+			<% if mobile? %>
+			<li><a href="/toread"><h3>To Read</h3></a></li>
+			<% end %>
+		</ul>
+	</section>
+<% end %>
+<% if !mobile? && @to_read %>
+	<section id="toread" class="listing">
+		<h2>To Read</h2>
+		<ul>
+			<% @to_read.each do |mark| %>
+			<li>
+				<%=output_bookmark(mark)%>
+			</li>
+			<% end %>
+		</ul>
+	</section>
+<% end %>

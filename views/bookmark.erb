@@ -1,0 +1,7 @@
+<a href="<%= mark.href %>" title="<%= mark.title %>"><h3><%= mark.title %></h3></a>
+<p class="document-info">
+	Tags: <% if mark.tags %><% mark.tags.each do |tag| %><a href="/<%=tag%>"><%=tag%></a> <% end %><% end %><br>
+	Hash: <%= mark._id %><br>
+	Bookmarked on <span class="date"><%= format_date(mark.date_created) %></span>
+</p>
+<% if mark.notes %><p class="description"><%= mark.notes %></p><% end %>

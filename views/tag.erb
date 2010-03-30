@@ -1,0 +1,12 @@
+<div id="tag-page">
+	<section id="tag-view" class="listing">
+		<h2><%=@tag%></h2>
+		<ul>
+		<% @bookmarks.each do |mark| %>
+		<li>
+			<%=output_bookmark(mark)%>
+		</li>
+		<% end %>
+		</ul>
+	</section>
+</div>
