@@ -1,0 +1,25 @@
+{
+	"_id":"_design/documents",
+	"language":"javascript",
+	"views": {
+		"by_date": {
+			"map":"function(doc) { emit(doc.date_created, doc); }"
+		},
+		"toread": {
+			"map":"function(doc) { if (doc.tags) { doc.tags.forEach(function(tag) { if (tag == 'toread') emit(tag, doc); } ); } }"
+		}
+	}
+}
+{
+	"_id":"_design/tags",
+	"language":"javascript",
+	"views": {
+		"count": {
+			"map":"function(doc) { if (doc.tags) { doc.tags.forEach(function(tag) { emit(tag, 1); }); } }",
+			"reduce":"function (keys, values) { return sum(values); }"
+		},
+		"documents": {
+			"map":"function(doc) { if (doc.tags) { doc.tags.forEach(function(tag) { emit(tag, doc); }); } }"
+		}
+	}
+}

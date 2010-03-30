@@ -10,9 +10,10 @@ There are some basic pages for viewing a home page of stored bookmarks, a bookma
 Getting Started
 ---------------
 
-- Configure the config.yml file with a _username_ (not used for anything but included in the XML sent back to Pukka) and
-  the name of the CouchDB _database_.
+- Configure the config.yml file with a *username* (not used for anything but included in the XML sent back to Pukka) and
+  the name of the CouchDB *database*.
 - Ensure the database is created in your CouchDB instance.
+- Add the view design documents to CouchDB found in the *couchdb_design_docs.json* file.
 - Start the Sinatra server in any Rack-supporting environment and navigate to the home page (eg. http://localhost:4567/)
 
 - In Pukka, in the advanced preferences, configure the API URL as `http://<servername or localhost>:<port>`
@@ -21,7 +22,7 @@ Getting Started
 Special Tags
 ------------
 
-There are two special tags looked for when the application renders the home page, _speeddial_ and _toread_. URLs added with
+There are two special tags looked for when the application renders the home page, *speeddial* and *toread*. URLs added with
 those tags will appear in special sections on the home page.
 
 
